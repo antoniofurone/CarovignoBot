@@ -1,0 +1,84 @@
+<resources>
+    <string name="app_name">CarovignoBot</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="action_info">Info</string>
+
+    <string name="core_url">http://carovignobot.org/cy-bss-core</string>
+    <string name="bot_url">https://telegram.me/carovignobot</string>
+
+
+    <string name="map_type_selection_title">Select map type:</string>
+    <string name="google_map_type_name">Google Map</string>
+    <string name="osm_map_type_name">Open Street Map</string>
+
+    <string name="loc_selection_title">Select type:</string>
+
+    <string name="warn_title">Warning</string>
+    <string name="warn_loc_permission">Permission for localization not granted. Grants it to improve your experience.</string>
+    <string name="warn_select_marker">Select marker.</string>
+
+
+    <string name="error_title">Error</string>
+    <string name="error_check_connection">Error is verified. Check your connection.</string>
+
+
+    <string name="toast_loc_permission">Localization permission granted</string>
+    <string name="toast_setting_change_unavailable">Setting change unavailable</string>
+    <string name="toast_update_list">List updated</string>
+
+
+    <string name="info_dialog_name">Info</string>
+    <string name="setting_dialog_name">Settings</string>
+    <string name="map_activity_name">Map</string>
+
+    <string name="loc_tourist_site_name">Tourist Sites</string>
+    <string name="loc_event_name">Events</string>
+    <string name="loc_story_name">Stories</string>
+
+    <string name="map_selection_title">Select map:</string>
+
+    <string name="tourist_site_map_name">Tourist Sites</string>
+    <string name="story_map_name">Stories</string>
+    <string name="event_map_name">Events</string>
+
+    <string name="tourist_site_map_url">http://carovignobot.org/cy-bss-ironhorse/html/maps/urbanbot/touristSites.html</string>
+    <string name="story_map_url">http://carovignobot.org/cy-bss-ironhorse/html/maps/urbanbot/stories.html</string>
+    <string name="event_map_url">http://carovignobot.org/cy-bss-ironhorse/html/maps/urbanbot/events.html</string>
+
+    <string name="tourist_site_map_url_osm">http://carovignobot.org/cy-bss-ironhorse/html/maps/urbanbot/touristSitesOSM.html</string>
+    <string name="story_map_url_osm">http://carovignobot.org/cy-bss-ironhorse/html/maps/urbanbot/storiesOSM.html</string>
+    <string name="event_map_url_osm">http://carovignobot.org/cy-bss-ironhorse/html/maps/urbanbot/eventsOSM.html</string>
+
+
+    <string name="service_not_available">Geocoder service not available</string>
+    <string name="invalid_lat_long_used">Invalid Lat Long used</string>
+    <string name="no_address_found">No address found</string>
+    <string name="address_found">Address found</string>
+
+    <string name="label_core_url">Core Url</string>
+    <string name="label_refresh_interval">Location Refresh Interval (in second)</string>
+
+    <string name="btn_label_close">Close</string>
+    <string name="btn_label_save">Save</string>
+
+    <string name="app_key_store">CarovignoBot.keys</string>
+    <string name="refresh_interval">refresh_interval</string>
+    <string name="author_info">2016 (c) Antonio Furone (telegram: @antoniofurone); Wheater by openweathermap.org; Puglia Events by http://www.dataset.puglia.it/dataset/eventi-in-puglia</string>
+
+    <string name="address_broadcast">org.carovignobot.broadcast.address</string>
+    <string name="address_broadcast_label">address</string>
+
+    <string name="map_type_normal">Normal</string>
+    <string name="map_type_satellite">Satellite</string>
+    <string name="map_type_hybrid">Hybrid</string>
+
+    <string name="position_markup_title">Your position</string>
+
+    <string name="share_button_label">Share</string>
+    <string name="share_suffix_label">(via CarovignoBot)</string>
+
+    <string name="facebook_app_id">1005789489542075</string>
+
+
+</resources>

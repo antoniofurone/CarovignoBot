@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">CarovignoBot</string>
+
+    <string name="action_settings">Configurazione</string>
+    <string name="action_info">Info</string>
+
+    <string name="core_url">http://carovignobot.org/cy-bss-core</string>
+    <string name="bot_url">https://telegram.me/carovignobot</string>
+
+    <string name="map_type_selection_title">Seleziona il tipo di mappa:</string>
+    <string name="google_map_type_name">Google Map</string>
+    <string name="osm_map_type_name">Open Street Map</string>
+
+    <string name="loc_selection_title">Seleziona il tipo:</string>
+
+    <string name="warn_title">Warning</string>
+    <string name="warn_loc_permission">Permessi per la localizzazione non concessi. Per migliorare la tua esperienza è necessiario concedere tali permessi.</string>
+    <string name="warn_select_marker">Seleziona un marker.</string>
+
+
+    <string name="error_title">Errore</string>
+    <string name="error_check_connection">Si è verificato un errore. Verifica la connessione.</string>
+
+    <string name="toast_loc_permission">Permessi per la localizzazione concessi</string>
+    <string name="toast_setting_change_unavailable">Setting change unavailable</string>
+    <string name="toast_update_list">Lista aggiornata</string>
+
+    <string name="info_dialog_name">Info</string>
+    <string name="setting_dialog_name">Configurazione</string>
+    <string name="map_activity_name">Mappa</string>
+
+    <string name="loc_tourist_site_name">Siti Turistici</string>
+    <string name="loc_event_name">Eventi</string>
+    <string name="loc_story_name">Storie</string>
+
+
+    <string name="map_selection_title">Seleziona la mappa:</string>
+
+    <string name="tourist_site_map_name">Siti Turistici</string>
+    <string name="story_map_name">Storie</string>
+    <string name="event_map_name">Eventi</string>
+
+    <string name="tourist_site_map_url">http://carovignobot.org/cy-bss-ironhorse/html/maps/urbanbot/touristSites.html</string>
+    <string name="story_map_url">http://carovignobot.org/cy-bss-ironhorse/html/maps/urbanbot/stories.html</string>
+    <string name="event_map_url">http://carovignobot.org/cy-bss-ironhorse/html/maps/urbanbot/events.html</string>
+
+    <string name="tourist_site_map_url_osm">http://carovignobot.org/cy-bss-ironhorse/html/maps/urbanbot/touristSitesOSM.html</string>
+    <string name="story_map_url_osm">http://carovignobot.org/cy-bss-ironhorse/html/maps/urbanbot/storiesOSM.html</string>
+    <string name="event_map_url_osm">http://carovignobot.org/cy-bss-ironhorse/html/maps/urbanbot/eventsOSM.html</string>
+
+    <string name="service_not_available">Geocoder service not available</string>
+    <string name="invalid_lat_long_used">Invalid Lat Long used</string>
+    <string name="no_address_found">No address found</string>
+    <string name="address_found">Address found</string>
+
+    <string name="label_core_url">Core Url</string>
+    <string name="label_refresh_interval">Intervallo di refresh della posizione (in secondi)</string>
+
+    <string name="btn_label_close">Chiudi</string>
+    <string name="btn_label_save">Salva</string>
+
+    <string name="app_key_store">CarovignoBot.keys</string>
+    <string name="refresh_interval">refresh_interval</string>
+    <string name="author_info">2016 (c) Antonio Furone (telegram: @antoniofurone); Meteo by openweathermap.org; Eventi in Puglia by http://www.dataset.puglia.it/dataset/eventi-in-puglia</string>
+
+    <string name="address_broadcast">org.carovignobot.broadcast.address</string>
+    <string name="address_broadcast_label">address</string>
+
+    <string name="map_type_normal">Normale</string>
+    <string name="map_type_satellite">Satellitare</string>
+    <string name="map_type_hybrid">Ibrida</string>
+
+    <string name="position_markup_title">Sei qui</string>
+
+    <string name="share_button_label">Condividi</string>
+    <string name="share_suffix_label">(via CarovignoBot)</string>
+
+    <string name="facebook_app_id">1005789489542075</string>
+
+
+</resources>
