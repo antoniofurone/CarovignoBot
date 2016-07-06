@@ -25,7 +25,14 @@ import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
 import com.facebook.appevents.AppEventsLogger;
+import com.facebook.share.Sharer;
+import com.facebook.share.model.ShareHashtag;
+import com.facebook.share.model.ShareLinkContent;
+import com.facebook.share.widget.ShareDialog;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.drive.internal.StringListResponse;
@@ -72,6 +79,10 @@ public class MainActivity extends
 
     private Marker currentMarker=null;
 
+    // Facebook
+    CallbackManager callbackManager;
+    ShareDialog shareDialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,7 +90,25 @@ public class MainActivity extends
 
         //facebook
         FacebookSdk.sdkInitialize(getApplicationContext());
-        //AppEventsLogger.activateApp(this);
+        callbackManager = CallbackManager.Factory.create();
+        shareDialog = new ShareDialog(this);
+        shareDialog.registerCallback(callbackManager, new FacebookCallback<Sharer.Result>() {
+
+            @Override
+            public void onSuccess(Sharer.Result result) {
+
+            }
+
+            @Override
+            public void onCancel() {
+
+            }
+
+            @Override
+            public void onError(FacebookException e) {
+
+            }
+        });
         // end facebook
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -431,8 +460,48 @@ public class MainActivity extends
                         )
                         .show();
             }
+            return true;
+        }
+
+        if (id == R.id.menu_item_facebook) {
+            Log.i(LOG_TAG, "onItemFacebook");
+
+            if (mCurrentMarkLocId!=null){
+                if (ShareDialog.canShow(ShareLinkContent.class)) {
+                    String description=mCurrentLocName+" "+getResources().getString(R.string.share_suffix_label);
+
+                    ShareLinkContent linkContent = new ShareLinkContent.Builder()
+                            .setContentTitle(mCurrentLocName)
+                            .setContentDescription(description)
+                            .setContentUrl(Uri.parse("http://maps.google.com/maps?&q="+mCurrentLatitude+","+mCurrentLongitude))
+                            .setQuote(description)
+                            .setShareHashtag(new ShareHashtag.Builder()
+                                    .setHashtag("#CarovignoBot")
+                                    .build())
+                            .build();
+
+                    shareDialog.show(linkContent);
+                }
+            }
+            else
+            {
+                new AlertDialog.Builder(MainActivity.this)
+                        .setTitle(getResources().getString(R.string.warn_title))
+                        .setMessage(getResources().getString(R.string.warn_select_marker))
+                        .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                    }
+                                }
+                        )
+                        .show();
+            }
+
+            return true;
 
         }
+
+
 
         return super.onOptionsItemSelected(item);
     }

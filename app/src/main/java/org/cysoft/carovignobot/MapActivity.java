@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
+import android.net.Uri;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -21,6 +22,16 @@ import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.FacebookSdk;
+import com.facebook.share.Sharer;
+import com.facebook.share.model.ShareContent;
+import com.facebook.share.model.ShareHashtag;
+import com.facebook.share.model.ShareLinkContent;
+import com.facebook.share.model.ShareMediaContent;
+import com.facebook.share.widget.ShareDialog;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationServices;
@@ -65,10 +76,37 @@ public class MapActivity
 
     private String mMapType=null;
 
+    // Facebook
+    CallbackManager callbackManager;
+    ShareDialog shareDialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
+
+        //facebook
+        FacebookSdk.sdkInitialize(getApplicationContext());
+        callbackManager = CallbackManager.Factory.create();
+        shareDialog = new ShareDialog(this);
+        shareDialog.registerCallback(callbackManager, new FacebookCallback<Sharer.Result>() {
+
+            @Override
+            public void onSuccess(Sharer.Result result) {
+
+            }
+
+            @Override
+            public void onCancel() {
+
+            }
+
+            @Override
+            public void onError(FacebookException e) {
+
+            }
+        });
+        // end facebook
 
         mMapType=getResources().getString(R.string.tourist_site_map_name);
         if (getIntent().getStringExtra("mapType")!=null)
@@ -275,7 +313,47 @@ public class MapActivity
                         .show();
             }
 
+            return true;
         }
+
+        if (id == R.id.menu_item_facebook) {
+            Log.i(LOG_TAG, "onItemFacebook");
+
+            if (mCurrentMarkLocId!=null){
+                if (ShareDialog.canShow(ShareLinkContent.class)) {
+
+                    String description=mCurrentLocName+" "+getResources().getString(R.string.share_suffix_label);
+
+                    ShareLinkContent linkContent = new ShareLinkContent.Builder()
+                            .setContentTitle(mCurrentLocName)
+                            .setContentDescription(description)
+                            .setQuote(description)
+                            .setContentUrl(Uri.parse("http://maps.google.com/maps?&q="+mCurrentLatitude+","+mCurrentLongitude))
+                            .setShareHashtag(new ShareHashtag.Builder()
+                                    .setHashtag("#CarovignoBot")
+                                    .build())
+                            .build();
+
+                    shareDialog.show(linkContent);
+                }
+            }
+            else
+            {
+                new AlertDialog.Builder(MapActivity.this)
+                        .setTitle(getResources().getString(R.string.warn_title))
+                        .setMessage(getResources().getString(R.string.warn_select_marker))
+                        .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                    }
+                                }
+                        )
+                        .show();
+            }
+
+            return true;
+        }
+
 
         return super.onOptionsItemSelected(item);
     }

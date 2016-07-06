@@ -4,13 +4,18 @@
     tools:context="org.cysoft.carovignobot.MainActivity">
 
     <item
+        android:id="@+id/menu_item_facebook"
+        app:showAsAction="ifRoom"
+        android:title="Facebook"
+        android:icon="@drawable/facebook24"
+        />
+
+    <item
         android:id="@+id/menu_item_share"
         app:showAsAction="ifRoom"
         android:title="@string/share_button_label"
         android:icon="@android:drawable/ic_menu_share"
         />
-
-
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"

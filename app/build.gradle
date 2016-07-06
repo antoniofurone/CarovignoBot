@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.1"
+    buildToolsVersion "23.0.2"
 
     productFlavors {
         // Define separate dev and prod product flavors.
@@ -35,11 +35,13 @@ android {
     }
 }
 
+
 repositories {
     jcenter {
         url "http://jcenter.bintray.com/"
     }
 }
+
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])

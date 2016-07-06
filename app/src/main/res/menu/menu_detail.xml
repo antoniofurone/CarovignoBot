@@ -4,6 +4,13 @@
     >
 
     <item
+        android:id="@+id/menu_item_facebook"
+        app:showAsAction="ifRoom"
+        android:title="Facebook"
+        android:icon="@drawable/facebook24"
+        />
+
+    <item
         android:id="@+id/menu_item_share"
         app:showAsAction="ifRoom"
         android:title="@string/share_button_label"

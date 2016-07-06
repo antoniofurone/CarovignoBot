@@ -78,7 +78,7 @@
     <string name="share_button_label">Share</string>
     <string name="share_suffix_label">(via CarovignoBot)</string>
 
-    <string name="facebook_app_id">1005789489542075</string>
+    <string name="facebook_app_id" translatable="false">1005789489542075</string>
 
 
 </resources>
